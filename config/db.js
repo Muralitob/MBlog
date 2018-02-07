@@ -6,18 +6,12 @@ var objectIdToTimestamp = require('objectid-to-timestamp')// 根据_id生成时�
 var UserSchema = require('../schemas/User')
 var ClassifySchema = require('../schemas/Classify')
 var ArticleSchema = require('../schemas/Article')
-var env = process.env.NODE_ENV||'development'
-if(env==='development'){
-  dbUrl = 'mongodb://localhost/mywebsite'
-}
+// var env = process.env.NODE_ENV||'development'
+// if(env ==='development'){
+//   dbUrl = 'mongodb://localhost/mywebsite'
+// }
 mongolass.connect(dbUrl)
-/*
-    mongolass插件系统，语法:
-    mongolass.plugin(插件名字,{
-    before(方法)
-    after(方法)
-  })
-*/
+
 mongolass.plugin('addCreateAt',{
   afterFind:(results)=>{
     results.forEach((item)=>{
