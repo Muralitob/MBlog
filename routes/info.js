@@ -9,7 +9,7 @@ router.post('/info/edit', (req,res,next) =>{
   infoMsg[modifiNum] = aboutInfo
   infoMsg['num']++
   console.log(infoMsg)
-  fs.writeFile(path.join(__dirname,'../../','/src/another.json'),JSON.stringify(infoMsg, null, 2), (err) =>{
+  fs.writeFile(path.join(__dirname,'../another.json'),JSON.stringify(infoMsg, null, 2), (err) =>{
     if(err){
       res.send({
         code:-200,
