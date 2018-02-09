@@ -8,7 +8,6 @@ router.post('/info/edit', (req,res,next) =>{
   let modifiNum = 'self'+(parseInt(infoMsg.num)+1)
   infoMsg[modifiNum] = aboutInfo
   infoMsg['num']++
-  console.log(infoMsg)
   fs.writeFile(path.join(__dirname,'../another.json'),JSON.stringify(infoMsg, null, 2), (err) =>{
     if(err){
       res.send({
